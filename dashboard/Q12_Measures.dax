@@ -1,0 +1,140 @@
+// Number of collected comments.
+Comment count =
+COUNTROWS(Comments)
+
+// Distinct channel IDs across the selected artists; shared commenters are counted once.
+Unique commenters =
+DISTINCTCOUNT(Comments[author_channel_id])
+
+// Distinct videos in the selection.
+Videos =
+DISTINCTCOUNT(Comments[video_id])
+
+// Comments with at least one recorded like.
+Liked comments =
+CALCULATE([Comment count], Comments[like_count] > 0)
+
+// Share of sampled comments with at least one recorded like.
+Comments with likes =
+DIVIDE([Liked comments], [Comment count])
+
+// Mean likes per sampled comment. Sensitive to unusually popular comments.
+Average likes =
+AVERAGE(Comments[like_count])
+
+// Median likes per sampled comment.
+Median likes =
+MEDIAN(Comments[like_count])
+
+// Positive comments from the supplied Q9 analysis.
+Positive =
+SUM(Sentiment_Artists[positive_comments])
+
+// Neutral comments from the supplied Q9 analysis.
+Neutral =
+SUM(Sentiment_Artists[neutral_comments])
+
+// Negative comments from the supplied Q9 analysis.
+Negative =
+SUM(Sentiment_Artists[negative_comments])
+
+// Comment-weighted mean sentiment from Q9.
+Mean sentiment =
+DIVIDE(SUMX(Sentiment_Artists, Sentiment_Artists[mean_sentiment] * Sentiment_Artists[total_comments]), SUM(Sentiment_Artists[total_comments]))
+
+// Within each artist dataset, share of actors who made more than one comment.
+Repeat commenters =
+DIVIDE(SUM(Unique_Actors[repeat_actors]), SUM(Unique_Actors[unique_actors]))
+
+// Within each artist dataset, share of comments contributed by actors with more than one comment.
+Comments from repeat commenters =
+DIVIDE(SUM(Unique_Actors[total_comments]) - SUM(Unique_Actors[single_comment_actors]), SUM(Unique_Actors[total_comments]))
+
+// Occurrences only in the supplied top-ten-term lists, not the complete vocabularies.
+Listed term frequency =
+SUM(Top_Terms[frequency])
+
+// Ten highest frequencies in the selected supplied shortlists. Artist slicer restores the original per-artist top ten.
+Top 10 listed terms =
+VAR CurrentTerm = SELECTEDVALUE(Top_Terms[term])
+VAR TopTerms = TOPN(10, ALLSELECTED(Top_Terms[term]), CALCULATE([Listed term frequency]), DESC, Top_Terms[term], ASC)
+RETURN IF(CONTAINS(TopTerms, Top_Terms[term], CurrentTerm), [Listed term frequency])
+
+// NRC emotion matches per 1,000 comments. Emotions can overlap within a comment.
+Emotion matches per 1000 =
+DIVIDE(SUM(Emotions[emotion_count]) * 1000, [Comment count])
+
+// Weighted modularity for the artist and algorithm, calculated on the active-actor networks used in Q8.
+Community modularity =
+AVERAGE(Communities[modularity])
+
+// Communities for the artist and algorithm.
+Community count =
+SUM(Communities[communities])
+
+// Documents assigned to their most probable topic, among documents retained for LDA.
+Dominant topic documents =
+SUM(Topics[dominant_documents])
+
+// Top words for the hovered artist-specific topic.
+Topic terms =
+SELECTEDVALUE(Topics[top_terms])
+
+// Sum of comments from exactly ten highest-count actors per selected artist; channel ID breaks ties.
+Top ten comment count =
+SUMX(
+    VALUES(Artists[artist]),
+    VAR ActorCounts = CALCULATETABLE(
+        ADDCOLUMNS(VALUES(Comments[author_channel_id]),
+            "__CommentCount", CALCULATE(COUNTROWS(Comments))))
+    VAR LeadingActors = TOPN(10, ActorCounts, [__CommentCount], DESC, Comments[author_channel_id], ASC)
+    RETURN SUMX(LeadingActors, [__CommentCount])
+)
+
+// Top ten contributors per artist divided by that artist sample; pooled totals sum artist-level numerators.
+Top ten comment share =
+DIVIDE([Top ten comment count], [Comment count])
+
+// Maximum comments made by one actor in the artist sample.
+Maximum weighted degree =
+MAX(Centrality[maximum_weighted_degree])
+
+// Maximum actor betweenness from Q7, using inverse-weight distances.
+Maximum betweenness =
+MAX(Centrality[maximum_betweenness])
+
+// Q8 Louvain modularity on the active actor subset.
+Louvain modularity =
+CALCULATE(AVERAGE(Communities[modularity]), Communities[algorithm] = "Louvain")
+
+// Required-method comparator in modularity tooltips.
+Girvan Newman modularity =
+CALCULATE(AVERAGE(Communities[modularity]), Communities[algorithm] = "Girvan-Newman")
+
+// Dominant topic 1 count; theme is specific to each artist.
+Topic 1 documents =
+CALCULATE(SUM(Topics[dominant_documents]), Topics[topic] = 1)
+
+// Dominant topic 2 count; theme is specific to each artist.
+Topic 2 documents =
+CALCULATE(SUM(Topics[dominant_documents]), Topics[topic] = 2)
+
+// Dominant topic 3 count; theme is specific to each artist.
+Topic 3 documents =
+CALCULATE(SUM(Topics[dominant_documents]), Topics[topic] = 3)
+
+// Comments retained for LDA; smaller than collected sample.
+Modelled comments =
+SUM(Topics[dominant_documents])
+
+// Top words for topic 1 in the hovered artist model; blank for multiple different artists.
+Topic 1 top terms =
+CALCULATE(SELECTEDVALUE(Topics[top_terms]), Topics[topic] = 1)
+
+// Top words for topic 2 in the hovered artist model; blank for multiple different artists.
+Topic 2 top terms =
+CALCULATE(SELECTEDVALUE(Topics[top_terms]), Topics[topic] = 2)
+
+// Top words for topic 3 in the hovered artist model; blank for multiple different artists.
+Topic 3 top terms =
+CALCULATE(SELECTEDVALUE(Topics[top_terms]), Topics[topic] = 3)

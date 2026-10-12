@@ -1,0 +1,10 @@
+topic,mean_topic_probability,median_topic_probability,dominant_documents,artist,top_terms,topic_label
+1,0.333067423085641,0.32716049382716,1061,Taylor Swift,"life, happy, time, feel, every, great, hate, year, album, anyone",Taylor Swift - Topic 1
+2,0.333574601709509,0.32716049382716,867,Taylor Swift,"love, thank, que, always, hope, amazing, new, better, please, day",Taylor Swift - Topic 2
+3,0.333357975204851,0.32716049382716,681,Taylor Swift,"best, never, beautiful, ever, elizabeth, world, back, married, forever, heart",Taylor Swift - Topic 3
+1,0.331599556160464,0.326797385620915,897,Ariana Grande,"life, god, years, back, always, help, david, time, day, never",Ariana Grande - Topic 1
+2,0.336547167723159,0.33974358974359,1198,Ariana Grande,"petal, ari, believe, best, anyone, beautiful, album, cause, que, happened",Ariana Grande - Topic 2
+3,0.331853276116377,0.326797385620915,530,Ariana Grande,"love, mind, supernatural, yeah, come, good, wait, hate, need, loves",Ariana Grande - Topic 3
+1,0.337725059020893,0.33974358974359,1378,Billie Eilish,"beautiful, que, voice, amazing, anyone, best, performance, movie, thank, version",Billie Eilish - Topic 1
+2,0.330914826308698,0.326797385620915,514,Billie Eilish,"love, time, life, back, good, need, feel, said, mind, moved",Billie Eilish - Topic 2
+3,0.33136011467041,0.326797385620915,556,Billie Eilish,"love, til, day, better, live, die, always, might, never, forever",Billie Eilish - Topic 3

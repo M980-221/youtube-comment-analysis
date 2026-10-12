@@ -1,0 +1,4 @@
+artist,original_documents,documents_used,empty_documents_removed,retained_terms,retained_tokens,topics,log_likelihood,perplexity
+Taylor Swift,3600,2609,991,699,9724,3,-53649.4483603129,426.18228967476
+Ariana Grande,3600,2625,975,1034,17020,3,-97936.1176902602,489.704201576384
+Billie Eilish,3600,2448,1152,668,12333,3,-64852.2037233783,303.417729478382

@@ -1,0 +1,10 @@
+artist,sentiment_category,comments,total_comments,percentage
+Ariana Grande,Negative,475,3600,13.19
+Billie Eilish,Negative,400,3600,11.11
+Taylor Swift,Negative,411,3600,11.42
+Ariana Grande,Neutral,1808,3600,50.22
+Billie Eilish,Neutral,1862,3600,51.72
+Taylor Swift,Neutral,1743,3600,48.42
+Ariana Grande,Positive,1317,3600,36.58
+Billie Eilish,Positive,1338,3600,37.17
+Taylor Swift,Positive,1446,3600,40.17

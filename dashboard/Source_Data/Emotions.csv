@@ -1,0 +1,25 @@
+artist,emotion,emotion_count,id,emotions_per_1000_comments
+Ariana Grande,joy,1616,1,448.89
+Ariana Grande,trust,1293,1,359.17
+Ariana Grande,anticipation,1081,1,300.28
+Ariana Grande,sadness,890,1,247.22
+Ariana Grande,fear,829,1,230.28
+Ariana Grande,anger,611,1,169.72
+Ariana Grande,surprise,558,1,155
+Ariana Grande,disgust,490,1,136.11
+Billie Eilish,joy,1518,2,421.67
+Billie Eilish,trust,969,2,269.17
+Billie Eilish,anticipation,875,2,243.06
+Billie Eilish,sadness,795,2,220.83
+Billie Eilish,fear,505,2,140.28
+Billie Eilish,anger,428,2,118.89
+Billie Eilish,surprise,389,2,108.06
+Billie Eilish,disgust,305,2,84.72
+Taylor Swift,joy,1469,3,408.06
+Taylor Swift,trust,982,3,272.78
+Taylor Swift,anticipation,859,3,238.61
+Taylor Swift,sadness,564,3,156.67
+Taylor Swift,fear,395,3,109.72
+Taylor Swift,anger,381,3,105.83
+Taylor Swift,surprise,370,3,102.78
+Taylor Swift,disgust,306,3,85

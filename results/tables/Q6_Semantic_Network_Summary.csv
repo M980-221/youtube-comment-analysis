@@ -1,0 +1,4 @@
+artist,terms_nodes,bigram_edges,retained_bigram_occurrences,density
+Taylor Swift,712,759,2576,0.001499
+Ariana Grande,1185,1864,7333,0.001329
+Billie Eilish,681,915,5236,0.001976

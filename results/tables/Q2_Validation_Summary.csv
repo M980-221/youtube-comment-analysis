@@ -1,0 +1,10 @@
+measure,result
+Total data points,10800
+Unique comment IDs,10800
+Duplicate comment IDs,0
+Missing comment text,10
+Missing actor IDs,0
+Number of artists,3
+Number of videos,27
+Minimum comments per video,400
+Maximum comments per video,400

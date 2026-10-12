@@ -1,0 +1,4 @@
+artist,full_network_vertices,full_network_edges,connected_components,giant_component_vertices,actors_in_giant_component,giant_component_percentage,maximum_degree,maximum_weighted_degree,maximum_betweenness,maximum_closeness
+Taylor Swift,2666,2813,1,2666,2657,100,6,64,0.355141445385348,0.761152205016874
+Ariana Grande,2941,3061,1,2941,2932,100,6,107,0.511656632710927,0.670356684518348
+Billie Eilish,3183,3246,1,3183,3174,100,6,11,0.152356042972551,0.417784397108568

@@ -1,0 +1,10 @@
+Actual,Predicted,Comments,RowTotal,Percentage
+Taylor Swift,Taylor Swift,691,720,96
+Ariana Grande,Taylor Swift,605,720,84
+Billie Eilish,Taylor Swift,638,720,88.6
+Taylor Swift,Ariana Grande,7,720,1
+Ariana Grande,Ariana Grande,86,720,11.9
+Billie Eilish,Ariana Grande,19,720,2.6
+Taylor Swift,Billie Eilish,22,720,3.1
+Ariana Grande,Billie Eilish,29,720,4
+Billie Eilish,Billie Eilish,63,720,8.8

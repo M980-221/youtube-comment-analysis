@@ -1,0 +1,4 @@
+artist,total_comments,mean_sentiment,median_sentiment,standard_deviation,positive_comments,neutral_comments,negative_comments,positive_percentage,neutral_percentage,negative_percentage
+Taylor Swift,3600,0.118305921184468,0,0.268315710811304,1446,1743,411,40.17,48.42,11.42
+Ariana Grande,3600,0.0890080337814626,0,0.256105168824291,1317,1808,475,36.58,50.22,13.19
+Billie Eilish,3600,0.106170976442148,0,0.259035459771322,1338,1862,400,37.17,51.72,11.11

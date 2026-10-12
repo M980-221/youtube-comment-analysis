@@ -1,0 +1,7 @@
+artist,algorithm,active_actor_nodes,video_nodes,network_edges,communities,modularity,largest_community_nodes,largest_community_percentage,adjusted_rand_agreement
+Taylor Swift,Girvan-Newman,110,9,266,7,0.161715857821562,33,27.73,0.181090902046797
+Taylor Swift,Louvain,110,9,266,5,0.479366091994565,27,22.69,0.181090902046797
+Ariana Grande,Girvan-Newman,90,9,219,4,0.172004645086369,34,34.34,0.229476702075498
+Ariana Grande,Louvain,90,9,219,5,0.491972710117579,34,34.34,0.229476702075498
+Billie Eilish,Girvan-Newman,58,9,130,5,0.27982421875,20,29.85,0.195735488556584
+Billie Eilish,Louvain,58,9,130,5,0.44935546875,18,26.87,0.195735488556584

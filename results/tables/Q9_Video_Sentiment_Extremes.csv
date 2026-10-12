@@ -1,0 +1,7 @@
+artist,result,video_id,video_title,mean_sentiment,positive_percentage,negative_percentage
+Taylor Swift,Most positive video,WqbJT_vC0rs,Taylor Swift - Elizabeth Taylor (Official Music Video),0.197664141721912,52.5,7.75
+Taylor Swift,Least positive video,BpkmUfv1I4Q,Taylor Swift - I Hate It Here (Official Lyric Video),0.0399343772380151,32.25,24.75
+Ariana Grande,Most positive video,5UE2kT5LxE0,Ariana Grande - twilight zone (lyric visualizer),0.131008380510693,44.5,9
+Ariana Grande,Least positive video,KwRxeZ9Ro24,Ariana Grande - the boy is mine (Official Music Video),0.0220914749254265,23.75,16.25
+Billie Eilish,Most positive video,210Uq0WmBDI,Billie Eilish - WILDFLOWER (COLORS Performance),0.130487248592987,38.75,9
+Billie Eilish,Least positive video,ML0zd8UAuq8,Billie Eilish - What Was I Made For? (From The Motion Picture &quot;Barbie&quot;) [The Barbie Montage],0.0723332839808676,36,16.75
