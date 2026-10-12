@@ -34,7 +34,7 @@ Taylor had the highest positive share under the selected sentiment thresholds. A
 
 ![Baseline and tuned decision-tree performance with test confusion matrix](docs/images/model_evaluation.png)
 
-An 80/20 stratified split reserved **2,160 comments** for testing. Five-fold cross-validation selected the tree's complexity parameter. Accuracy improved from **35.46% to 38.89%**, compared with a **33.33% single-class baseline** on this balanced test set. The tuned model still predicted Taylor for 89.54% of test comments. I report this limitation alongside the improvement rather than treating the model as ready for use.
+An 80/20 stratified split reserved **2,160 comments** for testing. Five-fold cross-validation selected the tree's complexity parameter. Accuracy improved from **35.46% to 38.89%**, compared with a **33.33% single-class baseline** on this balanced test set. The tuned model still predicted Taylor for 89.54% of test comments. The tuned tree had low recall for Ariana and Billie.
 
 ## What is included
 
@@ -68,14 +68,4 @@ The public snapshot replaces comment and author identifiers with stable labels, 
 
 The dashboard includes native PBIP report/model definitions, DAX measures and portable embedded data. The repository images are **analytical layout previews**. A native Power BI Desktop refresh/filter test is not claimed. [Opening instructions and verification scope](dashboard/README.md).
 
-## Next improvements
-
-- Set a top-level comment target and retain available replies rather than enforcing an exact record cap.
-- Match video formats and collection periods, and document search exclusions.
-- Manually validate a sentiment sample and distinguish lyric quotation from personal reaction.
-- Evaluate vocabulary selection inside cross-validation and hold out complete videos or authors.
-- Compare the tree with a sparse-text classifier and assess topic stability across topic counts.
-
 **Author:** Mohammed Baquaysh — Data Science and Business (Marketing), Griffith University.
-
-The scripts retain their original question numbers for traceability. Presentation recordings and slides are excluded.

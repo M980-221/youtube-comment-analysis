@@ -39,7 +39,7 @@ python3 -m pip install numpy matplotlib
 python3 scripts/build_readme_charts.py --data-dir results/tables --output-dir docs/images
 ```
 
-Python is only used for these portfolio summary charts. The analytical models and the original detailed figures are implemented in R.
+Python draws the summary charts. R implements the analytical models and the detailed study figures.
 
 ## Optional fresh YouTube collection
 

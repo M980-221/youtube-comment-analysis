@@ -1,5 +1,5 @@
-# QUESTION 2: Revised YouTube collection following lecturer feedback
-# Run from the 3032ICT_Music_Analytics project, after existing tuber OAuth login.
+# QUESTION 2: Top-level comment and reply collection
+# Run from the repository root after tuber OAuth authorization.
 # Uses the previously selected 27 videos. Does not repeat searches.
 # Requests 350 top-level comments/video and retains ALL available replies to
 # those parents. No cap is applied to combined comments and replies.
@@ -7,18 +7,18 @@
 # API results can change during collection (deleted/added comments, for example).
 
 if (!requireNamespace("tuber", quietly = TRUE)) {
-  stop("Load your existing project and install/authenticate tuber first.")
+  stop("Install tuber and configure OAuth before live collection.")
 }
 required_api <- c("get_comment_threads", "get_comments")
 if (!all(required_api %in% getNamespaceExports("tuber"))) {
-  stop("This script needs the legacy tuber get_comment_threads/get_comments API. Do not upgrade tuber; send me your packageVersion('tuber') result.")
+  stop("This collector requires tuber functions get_comment_threads() and get_comments(); check the installed version for API compatibility.")
 }
 
 q2_files <- c("04_RData/Q2_Selected_Videos.RData",
               "04_RData/Q2_YouTube_Data.RData")
 q2_files <- q2_files[file.exists(q2_files)]
 if (!length(q2_files)) {
-  stop("Open your original RStudio project: the saved selected-video RData is missing from this working directory.")
+  stop("Selected-video RData is missing; run scripts/bootstrap_data.R from the repository root.")
 }
 q2_saved <- new.env(parent = emptyenv())
 load(q2_files[1], envir = q2_saved)
@@ -200,6 +200,6 @@ save(youtube_comments_raw_revised, youtube_comments_clean_revised,
 print(q2_revised_per_artist, row.names = FALSE)
 print(q2_revised_per_video, row.names = FALSE)
 if (!all(q2_revised_per_artist$within_3000_to_4000)) {
-  message("Some usable totals are outside the brief's range. All records are saved; do not trim replies. Review these totals before updating the report.")
+  message("Some artist totals are outside 3,000-4,000 records. All collected comments and replies have been retained.")
 }
 message("Revised collection saved. Original Q2-Q11 results have not been overwritten.")

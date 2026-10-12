@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render portfolio figures from the exported R analysis tables.
+"""Draw summary charts from the exported R analysis tables.
 
 Usage:
     python scripts/build_readme_charts.py --data-dir results/tables --output-dir docs/images
